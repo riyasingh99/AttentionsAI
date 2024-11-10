@@ -1,31 +1,26 @@
-README for Tour Guide AI Project
-Project Overview
+# README for Tour Guide AI Project
+
+## Project Overview
 Tour Guide AI is a comprehensive web application designed to provide users with personalized travel planning assistance. It integrates a powerful Retrieval-Augmented Generation (RAG) system to offer real-time information, cultural insights, and customizable travel itineraries. The application leverages a FastAPI backend with MongoDB for authentication and data management, and a Streamlit-based frontend for an interactive user interface.
 
-Features
-User Authentication: Secure login and registration functionalities with MongoDB as the backend database.
+## Features
+- **User Authentication**: Secure login and registration functionalities with MongoDB as the backend database.
+- **Personalized Tour Guide Assistance**: Capabilities to answer travel-related questions, provide cultural insights, and suggest itineraries.
+- **Real-Time Information Retrieval**: Web search integration to provide the most up-to-date information on travel destinations.
+- **Customizable Itineraries**: Tailored travel plans considering user preferences, time constraints, and other requirements.
+- **Team of Specialized Agents**: Distinct agents like the Cultural Expert and Itinerary Planner for in-depth and expert assistance.
+- **Web Reading**: Ability to read and extract information from websites.
+- **Session Management**: Persistent session states to maintain user interaction and chat history.
 
-Personalized Tour Guide Assistance: Capabilities to answer travel-related questions, provide cultural insights, and suggest itineraries.
-
-Real-Time Information Retrieval: Web search integration to provide the most up-to-date information on travel destinations.
-
-Customizable Itineraries: Tailored travel plans considering user preferences, time constraints, and other requirements.
-
-Team of Specialized Agents: Distinct agents like the Cultural Expert and Itinerary Planner for in-depth and expert assistance.
-
-Web Reading: Ability to read and extract information from websites.
-
-Session Management: Persistent session states to maintain user interaction and chat history.
-
-Project Structure
+## Project Structure
 
 
+```shell
 project-root/
 │
 ├── agents/
 │   ├── agent.py              # Contains the agent creation logic
 │   ├── app.py                # Main Streamlit app for frontend interaction
-│   ├── finance.py            # Placeholder file for finance-related features
 │   ├── requirements.txt      # Python dependencies for the agents module
 │
 ├── backend/
@@ -34,88 +29,99 @@ project-root/
 │   ├── routes/               # API routes for user authentication and other features
 │   ├── utils/                # Utility functions including password hashing and token management
 │   ├── database/             # Database connection setup
-│
-├── .gitattributes            # Attributes for repository settings
 ├── README.md                 # Project documentation
+```
 
-Backend Setup (FastAPI)
-Prerequisites
+## Backend Setup (FastAPI)
+
+### Prerequisites
 Ensure you have Python 3.10+, MongoDB, and PostgreSQL installed on your system.
 
-Installation
+### Installation
 Clone the repository:
-
-bash
+```bash
 git clone https://github.com/username/repository-name.git
 cd project-root/backend
-Create a virtual environment and activate it:
+```
 
-bash
+## Create a virtual environment and activate it:
+
+```bash
 python -m venv env
 source env/bin/activate  # On Windows: env\Scripts\activate
+```
+
 Install dependencies:
 
-bash
+```bash
 pip install -r requirements.txt
-Set up environment variables: Create a .env file and add your MongoDB and PostgreSQL connection details:
+```
+
+## Set up environment variables: Create a .env file and add your MongoDB and PostgreSQL connection details:
 
 env
+```shell
 DATABASE_URL=mongodb://localhost:27017/your_db
-POSTGRES_URL=postgresql+psycopg://username:password@localhost:5532/ai
-Run the FastAPI server:
+```
+## Run the FastAPI server:
 
-bash
+```bash
 uvicorn main:app --reload
-Key API Endpoints
-POST /login: Authenticate a user.
-POST /register: Register a new user.
-Frontend Setup (Streamlit)
+```
 
-Prerequisites
+## Frontend Setup (Streamlit)
+
+## Prerequisites
 Ensure Streamlit and Python 3.11+ are installed.
 
-Installation
+## Installation
 Navigate to the agents folder:
 
-bash
+```bash
 cd project-root/agents
-Create a virtual environment and activate it:
+```
 
-bash
+## Create a virtual environment and activate it:
+
+```bash
 python -m venv env
 source env/bin/activate  # On Windows: env\Scripts\activate
-Install dependencies:
+```
 
-bash
+## Install dependencies:
+
+```bash
 pip install -r requirements.txt
-Run the Streamlit application:
+```
 
-bash
+## Run the Streamlit application:
+
+```bash
 streamlit run app.py
+```
 
-Authentication
+## Authentication
 Users can log in or register using the sidebar interface.
 
 The application will display relevant travel assistant features after successful login.
 
 
-How to Use the Tour Guide App
+## How to Use the Tour Guide App
 
-1.) Launch the FastAPI backend: Ensure the backend server is running at http://localhost:8000.
+1. Launch the FastAPI backend: Ensure the backend server is running at http://localhost:8000.
 
-2.) Launch the Streamlit frontend: Run streamlit run app.py in the agents folder.
+2. Launch the Streamlit frontend: Run streamlit run app.py in the agents folder.
 
-3.) Access the app: Open the Streamlit app in your web browser. You can log in or register using the sidebar and start interacting with the tour guide agent.
+3. Access the app: Open the Streamlit app in your web browser. You can log in or register using the sidebar and start interacting with the tour guide agent.
 
-Available Features : 
-
+## Available Features : 
 1. Get Travel Assistance: Ask questions about travel, culture, and receive curated answers.
 2. Plan Itineraries: Create custom travel itineraries based on your input.
 3. Real-Time Web Search: Use integrated search tools for current information on destinations.
    
-Dependencies
+## Dependencies
 
-Backend:
+### Backend:
 
 FastAPI
 MongoDB Driver (e.g., motor)
@@ -124,22 +130,9 @@ Pydantic
 passlib for password hashing
 
 
-Frontend:
+### Frontend:
 
 Streamlit
 requests for API calls
 Additional libraries (see requirements.txt)
 
-Contributing
-Fork the project.
-Create a new branch (git checkout -b feature-branch).
-Commit changes (git commit -m "Add new feature").
-Push to the branch (git push origin feature-branch).
-Open a pull request.
-
-License
-This project is licensed under the MIT License.
-
-Author: RIYA SINGH
-Email: riya.iitbombay2025@gmail.com
-Feel free to contribute, open issues, or request new features to enhance this project!
